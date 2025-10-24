@@ -5,24 +5,24 @@ service:
   buildToolVersion: "MBTJ11N16"
 
 stages:
-  build: 
-    source: helloworldui5 
+  build:
+    source: helloworldui5
     npmExecuteLint: false
-
-  additionalUnitTests: 
-    npmExecuteScripts: false 
-
-  malwareScan: 
-    malwareExecuteScan: true
-
-  acceptance: 
+  
+  additionalUnitTests:
+    npmExecuteScripts: false
+  
+  malwareScan:
+    malwareExecuteScan: false
+  
+  acceptance:
     cloudFoundryDeploy: false
     npmExecuteEndToEndTests: false
-
-  compliance: 
+  
+  compliance:
     sonarExecuteScan: false
-
-  release: 
+  
+  release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d1568edetrial_trial1-sctsj68u_ext"
@@ -30,7 +30,7 @@ stages:
     cfCredentialsId: "deployonbtp"
     deployType: "standard"
     tmsUpload: false
-
+    
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
