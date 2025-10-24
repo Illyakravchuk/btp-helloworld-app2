@@ -1,26 +1,28 @@
 ---
 general:
   buildTool: "mta"
+service:
+  buildToolVersion: "MBTJ11N16"
 
 stages:
-  Build:
-    source: helloworldui5
+  build: 
+    source: helloworldui5 
     npmExecuteLint: false
 
-  Additional Unit Tests:
-    npmExecuteScripts: false
+  additionalUnitTests: 
+    npmExecuteScripts: false 
 
-  Malware Scan:
+  malwareScan: 
     malwareExecuteScan: true
 
-  Acceptance:
+  acceptance: 
     cloudFoundryDeploy: false
     npmExecuteEndToEndTests: false
 
-  Compliance:
+  compliance: 
     sonarExecuteScan: false
 
-  Release:
+  release: 
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d1568edetrial_trial1-sctsj68u_ext"
